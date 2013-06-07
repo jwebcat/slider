@@ -759,7 +759,7 @@ select:focus {
     filter: alpha(opacity=100); 
 }
 
-.flex-direction-nav a .screen-reader {
+.flexslider .screen-reader {
     position: absolute;
     top: -9999em;
     left:-9999em;

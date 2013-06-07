@@ -41,13 +41,31 @@
 
 	        <p>Use Slider to show images, videos and other content.</p>
 
-            <div class="flexslider">
+	        <p>Slider is a fork of <a href="http://www.woothemes.com/flexslider/">FlexSlider by WooThemes</a> that's been adapted to integrate more closely with the <a href="http://cferdinandi.github.io/kraken/">Kraken boilerplate</a>. Some of the default slider functions have also been adjusted to better align with research on slider usability.</p>
+
+            <div class="flexslider" id="slider-basic">
                 <ul class="slides">
                     <li><img src="img/cupcake1.jpg"></li>
                     <li><img src="img/cupcake2.jpg"></li>
                     <li><iframe width="560" height="315" src="http://www.youtube.com/embed/8qjge9U_MiA" frameborder="0" allowfullscreen></iframe></li>
                 </ul>
             </div>
+
+            <hr>
+
+
+            <h1 class="text-center">Getting Started</h1>
+
+            <p>Start using Slider in just three easy steps.</p>
+
+            <ol>
+                <li>Add the <code>slider.css</code> and <code>slider.js</code> files to your site.</li>
+                <li>Include the HTML below in your markup (obviously replace the images and video scripts with your own content).</li>
+                <li>Add the script below as either inline JavaScript or in an external file to activate Slider.</li>
+            </ol>
+
+
+            <p class="space-bottom-small"><strong>HTML</strong></p>
 
             <pre>&lt;div class="flexslider"&gt;
     &lt;ul class="slides"&gt;
@@ -56,6 +74,13 @@
         &lt;li&gt;&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/8qjge9U_MiA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</pre>
+
+
+            <p class="space-bottom-small"><strong>JavaScript</strong></p>
+
+            <pre>$(window).load(function() {
+    $('.flexslider').flexslider();
+});</pre>
 
             <hr>
 
@@ -67,18 +92,24 @@
             <hr>
 
 
+            <h1 class="text-center">Optional Advanced Features</h1>
+
+            <p></p>
+
+
 	        <h1 class="text-center">A More Usable Carousel</h1>
 
-	        <p>Slider includes features designed to make it more usable and accessible:</p>
+	        <p>Slider's default settings are designed to make it more usable and accessible:</p>
 
             <ul>
+                <li>Relative sizing so all elements scale proportionately.</li>
                 <li>Auto-rotation is disabled by default.</li>
                 <li>Navigation arrows are permanently visible.</li>
                 <li>Navigation arrows are icons, not images, for crisp rendering on retina displays.</li>
                 <li>Progressive enhancement. By default, all images and videos are displayed. A small script adds a <code>.js</code> class to the <code>body</code> element, which applies the Slider styles.</li>
             </ul>
 
-	         <p>Slider is adapted from <a href="http://www.woothemes.com/flexslider/">FlexSlider 2 by Woo Themes</a>. For more on carousel usability, read these great articles by <a href="http://bradfrostweb.com/blog/post/carousels/">Brad Frost</a>, <a href="http://weedygarden.net/2013/01/carousel-stats/">Erik Runyons</a>, the <a href="http://www.nngroup.com/articles/auto-forwarding/">Nielsen Norman Group</a>, and the <a href="http://yorkwebteam.blogspot.co.uk/2013/03/are-homepage-carousels-effective-aka.html">University of York</a>.</p>
+	         <p>For more on carousel usability, read these great articles by <a href="http://bradfrostweb.com/blog/post/carousels/">Brad Frost</a>, <a href="http://weedygarden.net/2013/01/carousel-stats/">Erik Runyons</a>, the <a href="http://www.nngroup.com/articles/auto-forwarding/">Nielsen Norman Group</a>, and the <a href="http://yorkwebteam.blogspot.co.uk/2013/03/are-homepage-carousels-effective-aka.html">University of York</a>.</p>
 
             <hr>
 
@@ -104,6 +135,20 @@
     <!-- Javascript -->
     <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
     <script type='text/javascript' src='js/flexslider.js'></script>
+    <script>
+        $(window).load(function() {
+            $('#slider-basic').flexslider();
+        });
+        $(window).load(function() {
+            $('#slider-carousel').flexslider({
+                itemWidth: 190,
+                minItems: 2,
+                maxItems: 5,
+                prevText: '&lang; <span class="screen-reader">Previous</span>',
+                nextText: '&rang; <span class="screen-reader">Next</span>'
+            });
+        });
+    </script>
 
 </body>
 </html>
